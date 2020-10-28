@@ -9,12 +9,7 @@ function Room(props) {
   // isLit is variable
   // setLit is function 
   const[isLit, setLit] = useState(props.status);
-  let[age, setAge] = useState(30);
-
-  function updateLight(){
-    console.log("Light button clicked");
-    setLit(!isLit);
-  }
+  let[temp, setTemp] = useState(22);
 
   return (
     // Simple
@@ -26,14 +21,16 @@ function Room(props) {
     // Change css class dynamically - Method Name: Template String
     <div className={`room ${isLit? "lit": "dark"}`}>
         This light in the Room is {isLit ? "ON": "OFF"}
-        <br />
-        Age : {age}
-        <br />
-        <button onClick={updateLight}>Toggle Light</button>
-        <br />
-        <button onClick={() => {
-          console.log("Age button clicked");
-          setAge(++age);}}>Toggle Age</button>
+        <br /><br />
+        <button className="btn" onClick={() => {setLit(true)}}>LIGHTS ON</button>
+        &nbsp;&nbsp;
+        <button className="btn" onClick={() => {setLit(false)}}>LIGHTS OFF</button>
+        <br /><br /><br />
+        Room Temperature : {temp}°C
+        <br /><br />
+        <button className="btn" onClick={() => {setTemp(++temp)}}>TEMP +</button>
+        &nbsp;&nbsp;
+        <button className="btn" onClick={() => {setTemp(--temp)}}>TEMP -</button>
     </div>
   );
 }

@@ -1,5 +1,8 @@
 .room {
     height: 100vh;
+    text-align: center;
+    padding-top: 100px;
+    font-size: 20px;
 }
 
 .lit {
@@ -10,4 +13,11 @@
 .dark {
     background-color: black;
     color: white;
+}
+
+.btn {
+    height: 50px;
+    width: 120px;
+    font-size: 15px;
+    font-weight: 600;
 }
